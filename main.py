@@ -4,9 +4,9 @@ from datasets import Dataset as dataset
 from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments
 import torch
 # train,test,val,path
-train_path = r"c:\Users\Do Pham Tuan\.cache\kagglehub\datasets\praveengovi\emotions-dataset-for-nlp\versions\1\train.txt"
-test_path = r"C:\Users\Do Pham Tuan\.cache\kagglehub\datasets\praveengovi\emotions-dataset-for-nlp\versions\1\test.txt"
-val_path = r"C:\Users\Do Pham Tuan\.cache\kagglehub\datasets\praveengovi\emotions-dataset-for-nlp\versions\1\val.txt"
+train_path = r"c:\Users\Do Pham Tuan\.cache\kagglehub\datasets\praveengovi\emotions-dataset-for-nlp\versions\1\train.txt" #Change here
+test_path = r"C:\Users\Do Pham Tuan\.cache\kagglehub\datasets\praveengovi\emotions-dataset-for-nlp\versions\1\test.txt" #Change here
+val_path = r"C:\Users\Do Pham Tuan\.cache\kagglehub\datasets\praveengovi\emotions-dataset-for-nlp\versions\1\val.txt" #Change here
 
 # data
 train_data = pd.read_csv(train_path, sep=';', header=None, names=['text', 'label'])

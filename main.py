@@ -18,13 +18,13 @@ print (train_data)
 
 # Encode the labels to train_data, test_data, and val_data
 label = lb()
-lb.fit( label , train_data['label'])
+label.fit(train_data['label'])
 
 train_data["id"] = lb.transform(label, train_data['label'])
-lb.fit (label, test_data['label'])
+label.fit (test_data['label'])
 
 test_data["id"] = lb.transform(label, test_data['label'])
-lb.fit(label, val_data['label'])
+label.fit(val_data['label'])
 val_data["id"] = lb.transform(label, val_data['label'])
 
 # drop column labeled "label"
@@ -45,7 +45,7 @@ train_data = train_data.map(tokenize_data, batched=True)
 print(train_data)
 
 #training model:
-model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=len(lb.classes_))
+model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=len(label.classes_))
 
 #Training pre-models
 pre_models = TrainingArguments(
